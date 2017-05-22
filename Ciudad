@@ -1,0 +1,44 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ium;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+/**
+ *
+ * @author Estudiante
+ */
+public abstract class Ciudad {
+    public String Nombre;
+    public int est;
+    
+    for(int i=0;i<est;i++)
+    {
+       EstMetereologica e = new EstMetereologica(); 
+    }
+    
+    public String leertxt(String direccion){
+   
+        String texto = "";
+        
+        try{
+            BufferedReader bf = new BufferedReader(new FileReader(direccion));
+            String temp = "";
+            String bfRead;
+            while((bfRead = bf.readLine()) != null){
+                temp = bfRead;
+                texto = temp;
+                System.out.println(texto);
+            }
+        }catch(Exception e){
+            System.err.println("No se encontró archivo");
+        }
+        
+    return texto;    
+    }
+}
+
